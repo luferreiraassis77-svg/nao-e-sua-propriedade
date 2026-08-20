@@ -1,0 +1,11 @@
+{
+  "name": "NÃO É SUA PROPRIEDADE",
+  "description": "Aplicativo oficial de conscientização, educação, combate ao feminicídio, apoio emergencial 180/190 e desconstrução de mitos com Modo Seguro integrado.",
+  "requestFramePermissions": [
+    "geolocation",
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
