@@ -14,9 +14,11 @@ import {
   HelpCircle,
   BookOpen,
   MessageSquare,
-  Users
+  Users,
+  Scale
 } from 'lucide-react';
-import campanhaMulherImg from '../assets/images/campanha_feminicidio_180_1787223865455.jpg';
+import CincoTiposViolencia from '../components/CincoTiposViolencia';
+const campanhaMulherImg = 'https://images.unsplash.com/photo-1590424744257-f50689b02bc3?auto=format&fit=crop&q=80&w=800';
 
 interface EducationalQuote {
   id: number;
@@ -34,24 +36,30 @@ const FRASES_CONSCIENTIZACAO: EducationalQuote[] = [
   },
   {
     id: 2,
+    frase: '“A violência contra a mulher é toda ação baseada no gênero que cause morte, dano ou sofrimento físico, sexual ou psicológico. No Brasil, a Lei Maria da Penha divide essa violência em 5 tipos: física, psicológica, sexual, patrimonial e moral.”',
+    autor: 'Lei Maria da Penha (Lei 11.340/2006, Art. 7º)',
+    contexto: 'Conceito oficial e jurídico para estudos, trabalhos escolares e debates sobre direitos humanos.'
+  },
+  {
+    id: 3,
     frase: '“Quem mata por ciúme, por controle ou por vingança comete feminicídio. A culpa NUNCA é da vítima.”',
     autor: 'Campanha Oficial 180',
     contexto: 'Desconstrução direta da culpabilização da vítima em casos de violência.'
   },
   {
-    id: 3,
+    id: 4,
     frase: '“A liberdade não é um crime, é um direito inalienável de todos os seres humanos.”',
     autor: 'Declaração Universal dos Direitos Humanos',
     contexto: 'Foco na autonomia individual e respeito à dignidade humana.'
   },
   {
-    id: 4,
+    id: 5,
     frase: '“Amor não vigia celular, não proíbe amizades e não ameaça. Amor cuida e liberta.”',
     autor: 'Educação para Relações Saudáveis',
     contexto: 'Para jovens identificarem os primeiros sinais sutis de relacionamento tóxico e abusivo.'
   },
   {
-    id: 5,
+    id: 6,
     frase: '“Traição machuca, mas NUNCA justifica violência ou morte. Ninguém tem o direito de punir a liberdade de outrem.”',
     autor: 'Direito & Convivência Ética',
     contexto: 'Diferenciação clara entre frustração emocional e conduta criminosa inaceitável.'
@@ -127,7 +135,7 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
 export default function EducacaoJovens() {
   const [copiedId, setCopiedId] = useState<number | null>(null);
   const [selectedAnswers, setSelectedAnswers] = useState<{ [qId: number]: number }>({});
-  const [activeTab, setActiveTab] = useState<'frases' | 'cartazes' | 'quiz' | 'roda'>('frases');
+  const [activeTab, setActiveTab] = useState<'frases' | '5tipos' | 'cartazes' | 'quiz' | 'roda'>('frases');
 
   const handleCopyFrase = (item: EducationalQuote) => {
     navigator.clipboard.writeText(`${item.frase}\n— ${item.autor}`);
@@ -181,6 +189,16 @@ export default function EducacaoJovens() {
           }`}
         >
           💬 Frases com 1 Toque Copiar
+        </button>
+        <button
+          onClick={() => setActiveTab('5tipos')}
+          className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+            activeTab === '5tipos'
+              ? 'bg-amber-500 text-zinc-950 shadow-xs'
+              : 'text-zinc-700 hover:bg-zinc-200'
+          }`}
+        >
+          ⚖️ Os 5 Tipos de Violência (Art. 7º)
         </button>
         <button
           onClick={() => setActiveTab('cartazes')}
@@ -261,6 +279,11 @@ export default function EducacaoJovens() {
             ))}
           </div>
         </section>
+      )}
+
+      {/* TAB: OS 5 TIPOS DE VIOLÊNCIA (ART. 7º LEI 11.340) */}
+      {activeTab === '5tipos' && (
+        <CincoTiposViolencia />
       )}
 
       {/* TAB 2: CARTAZES (VERTICAL & A4 IMPRESSÃO) */}

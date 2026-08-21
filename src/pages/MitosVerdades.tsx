@@ -14,6 +14,8 @@ import {
   ShieldAlert,
   Info
 } from 'lucide-react';
+import CincoTiposViolencia from '../components/CincoTiposViolencia';
+import BotoesComandoViolencia from '../components/BotoesComandoViolencia';
 
 interface MythFact {
   id: number;
@@ -180,6 +182,12 @@ export default function MitosVerdades() {
           </div>
         ))}
       </div>
+
+      {/* OS 5 TIPOS DE VIOLÊNCIA CONTRA A MULHER (LEI MARIA DA PENHA - ART. 7º) */}
+      <CincoTiposViolencia />
+
+      {/* CENTRAL DE BOTÕES DE COMANDO EM 1 TOQUE (LEI MARIA DA PENHA) */}
+      <BotoesComandoViolencia />
 
       {/* SEÇÃO FINAL: LEIS FUNDAMENTAIS BRASILEIRAS (LEI 13.104 & LEI 11.340) */}
       <section className="bg-gradient-to-br from-zinc-900 via-purple-950 to-zinc-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-purple-500/40 space-y-6">

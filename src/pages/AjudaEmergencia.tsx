@@ -16,6 +16,8 @@ import {
   HelpCircle,
   ExternalLink
 } from 'lucide-react';
+import GuiaDenunciaRedeApoio from '../components/GuiaDenunciaRedeApoio';
+import BotoesComandoViolencia from '../components/BotoesComandoViolencia';
 
 export default function AjudaEmergencia() {
   const [gpsLoading, setGpsLoading] = useState(false);
@@ -332,6 +334,12 @@ export default function AjudaEmergencia() {
 
         </div>
       </section>
+
+      {/* CENTRAL DE BOTÕES DE COMANDO EM 1 TOQUE (LEI MARIA DA PENHA & 5 TIPOS) */}
+      <BotoesComandoViolencia />
+
+      {/* GUIA DE DENÚNCIA & REDES DE APOIO LOCAIS */}
+      <GuiaDenunciaRedeApoio />
     </div>
   );
 }

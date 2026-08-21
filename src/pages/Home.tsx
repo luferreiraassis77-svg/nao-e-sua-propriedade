@@ -31,7 +31,7 @@ import {
   RefreshCw
 } from 'lucide-react';
 import { EMERGENCY_COMMANDS } from '../types';
-import campanhaMulherImg from '../assets/images/campanha_feminicidio_180_1787223865455.jpg';
+const campanhaMulherImg = 'https://images.unsplash.com/photo-1590424744257-f50689b02bc3?auto=format&fit=crop&q=80&w=800';
 
 export default function Home() {
   const { user } = useAuth();

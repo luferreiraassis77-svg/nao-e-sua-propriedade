@@ -26,7 +26,7 @@ import {
   RefreshCw
 } from 'lucide-react';
 import { EMERGENCY_COMMANDS } from '../types';
-import campanhaMulherImg from '../assets/images/campanha_feminicidio_180_1787223865455.jpg';
+const campanhaMulherImg = 'https://images.unsplash.com/photo-1590424744257-f50689b02bc3?auto=format&fit=crop&q=80&w=800'; // Placeholder
 
 interface QuickCommandModalProps {
   isOpen: boolean;
@@ -196,51 +196,111 @@ export default function QuickCommandModal({ isOpen, onClose }: QuickCommandModal
 
               <a
                 href="tel:190"
-                className="flex flex-col justify-between p-3 bg-white hover:bg-emerald-700 text-emerald-950 hover:text-white rounded-2xl border border-emerald-200 shadow-2xs hover:shadow-md transition-all group font-semibold text-xs"
+                className="flex flex-col justify-between p-3 bg-white hover:bg-red-600 text-red-950 hover:text-white rounded-2xl border border-red-200 shadow-2xs hover:shadow-md transition-all group font-semibold text-xs"
               >
                 <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-2xl">🐾</span>
+                  <span className="text-2xl">🚨</span>
+                  <span className="px-2 py-0.5 bg-red-100 group-hover:bg-white group-hover:text-red-800 text-red-900 text-[10px] font-black rounded-md">
+                    LIGUE 190
+                  </span>
+                </div>
+                <div>
+                  <div className="font-bold">Flagrante no Lar</div>
+                  <div className="text-[10px] text-zinc-500 group-hover:text-red-100">Polícia Militar Imediata</div>
+                </div>
+              </a>
+
+              <a
+                href="https://api.whatsapp.com/send?phone=556196100180&text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20e%20orienta%C3%A7%C3%A3o%20sobre%20viol%C3%AAncia%20dom%C3%A9stica"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col justify-between p-3 bg-white hover:bg-emerald-600 text-emerald-950 hover:text-white rounded-2xl border border-emerald-200 shadow-2xs hover:shadow-md transition-all group font-semibold text-xs"
+              >
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-2xl">💬</span>
                   <span className="px-2 py-0.5 bg-emerald-100 group-hover:bg-white group-hover:text-emerald-800 text-emerald-900 text-[10px] font-black rounded-md">
-                    LIGUE 190 / CCZ
+                    WHATSAPP 180
                   </span>
                 </div>
                 <div>
-                  <div className="font-bold">Proteção Animal</div>
-                  <div className="text-[10px] text-zinc-500 group-hover:text-emerald-100">Maus-Tratos & Resgate</div>
+                  <div className="font-bold">Chat Silencioso</div>
+                  <div className="text-[10px] text-zinc-500 group-hover:text-emerald-100">(61) 9610-0180</div>
                 </div>
               </a>
 
-              <a
-                href="tel:100"
-                className="flex flex-col justify-between p-3 bg-white hover:bg-purple-700 text-purple-950 hover:text-white rounded-2xl border border-purple-200 shadow-2xs hover:shadow-md transition-all group font-semibold text-xs"
+              <button
+                onClick={() => {
+                  onClose();
+                  navigate('/mitos-verdades');
+                }}
+                className="flex flex-col justify-between p-3 bg-white hover:bg-purple-700 text-purple-950 hover:text-white rounded-2xl border border-purple-200 shadow-2xs hover:shadow-md transition-all group font-semibold text-xs text-left cursor-pointer"
               >
                 <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-2xl">👵</span>
+                  <span className="text-2xl">⚖️</span>
                   <span className="px-2 py-0.5 bg-purple-100 group-hover:bg-white group-hover:text-purple-800 text-purple-900 text-[10px] font-black rounded-md">
-                    DISQUE 100
+                    PROTEÇÃO
                   </span>
                 </div>
                 <div>
-                  <div className="font-bold">Direitos do Idoso</div>
-                  <div className="text-[10px] text-zinc-500 group-hover:text-purple-100">Negligência & Finanças</div>
+                  <div className="font-bold">Medida Protetiva</div>
+                  <div className="text-[10px] text-zinc-500 group-hover:text-purple-100">Pedir em até 48h</div>
                 </div>
-              </a>
+              </button>
+            </div>
 
-              <a
-                href="tel:100"
-                className="flex flex-col justify-between p-3 bg-white hover:bg-amber-600 text-amber-950 hover:text-white rounded-2xl border border-amber-200 shadow-2xs hover:shadow-md transition-all group font-semibold text-xs"
-              >
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-2xl">🧒</span>
-                  <span className="px-2 py-0.5 bg-amber-100 group-hover:bg-white group-hover:text-amber-800 text-amber-900 text-[10px] font-black rounded-md">
-                    CONSELHO TUTELAR
-                  </span>
-                </div>
-                <div>
-                  <div className="font-bold">Crianças & Jovens</div>
-                  <div className="text-[10px] text-zinc-500 group-hover:text-amber-100">Abuso, Abandono & Evasão</div>
-                </div>
-              </a>
+            {/* 5 Botões de Comando por Tipo de Agressão da Lei Maria da Penha */}
+            <div className="bg-white/80 backdrop-blur-xs rounded-2xl p-3.5 border border-rose-300/80 space-y-2.5">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-black text-rose-950 uppercase tracking-wide flex items-center gap-1.5">
+                  <span>⚖️</span> 5 Comandos Diretos da Lei Maria da Penha (Art. 7º):
+                </span>
+                <span className="text-[10px] text-zinc-500 font-medium">Toque para agir</span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5 text-center">
+                <a
+                  href="tel:190"
+                  className="p-2 bg-red-100 hover:bg-red-600 text-red-900 hover:text-white rounded-xl text-[11px] font-black transition-all flex flex-col items-center justify-center gap-0.5"
+                >
+                  <span>🥊 1. Física</span>
+                  <span className="text-[9px] font-normal opacity-90">Ligar 190</span>
+                </a>
+                <a
+                  href="https://api.whatsapp.com/send?phone=556196100180&text=Quero%20denunciar%20amea%C3%A7as%20e%20viol%C3%AAncia%20psicol%C3%B3gica"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 bg-purple-100 hover:bg-[#9C27B0] text-purple-900 hover:text-white rounded-xl text-[11px] font-black transition-all flex flex-col items-center justify-center gap-0.5"
+                >
+                  <span>🧠 2. Psicológica</span>
+                  <span className="text-[9px] font-normal opacity-90">Prints/WhatsApp</span>
+                </a>
+                <a
+                  href="tel:180"
+                  className="p-2 bg-rose-100 hover:bg-rose-600 text-rose-900 hover:text-white rounded-xl text-[11px] font-black transition-all flex flex-col items-center justify-center gap-0.5"
+                >
+                  <span>🛑 3. Sexual</span>
+                  <span className="text-[9px] font-normal opacity-90">PEP SUS 72h</span>
+                </a>
+                <button
+                  onClick={() => {
+                    onClose();
+                    navigate('/ajuda-emergencia');
+                  }}
+                  className="p-2 bg-amber-100 hover:bg-amber-600 text-amber-900 hover:text-white rounded-xl text-[11px] font-black transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer"
+                >
+                  <span>🪙 4. Patrimonial</span>
+                  <span className="text-[9px] font-normal opacity-90">Bloqueio Bens</span>
+                </button>
+                <button
+                  onClick={() => {
+                    onClose();
+                    navigate('/ajuda-emergencia');
+                  }}
+                  className="p-2 bg-blue-100 hover:bg-blue-600 text-blue-900 hover:text-white rounded-xl text-[11px] font-black transition-all flex flex-col items-center justify-center gap-0.5 cursor-pointer col-span-2 sm:col-span-1"
+                >
+                  <span>💬 5. Moral</span>
+                  <span className="text-[9px] font-normal opacity-90">Queixa-Crime</span>
+                </button>
+              </div>
             </div>
 
             {/* Campaign Highlight */}

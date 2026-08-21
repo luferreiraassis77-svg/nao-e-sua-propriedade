@@ -15,7 +15,9 @@ import {
   Copy,
   Check
 } from 'lucide-react';
-import campanhaMulherImg from '../assets/images/campanha_feminicidio_180_1787223865455.jpg';
+const campanhaMulherImg = 'https://images.unsplash.com/photo-1590424744257-f50689b02bc3?auto=format&fit=crop&q=80&w=800'; // Placeholder - mulher empoderada / campanha
+import RelatosAvaliacoes from '../components/RelatosAvaliacoes';
+import BotoesComandoViolencia from '../components/BotoesComandoViolencia';
 
 export default function NaoESuaPropriedadeHome() {
   const navigate = useNavigate();
@@ -113,6 +115,156 @@ Essas palavras carregam um grito contra a violência, contra o controle, contra 
           <strong className="text-white font-black uppercase">Você não está sozinha:</strong> Se você ou alguém que você conhece está sofrendo ameaças de morte, perseguição ou controle obsessivo, ligue imediatamente para o <strong>180 (Central da Mulher)</strong> ou <strong>190 (Polícia Militar)</strong>.
         </div>
       </section>
+
+      {/* DEFINIÇÃO FUNDAMENTAL: OS 5 TIPOS DE VIOLÊNCIA (LEI MARIA DA PENHA) */}
+      <section className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-purple-300 shadow-xl space-y-6">
+        <div className="space-y-2">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-950 text-xs font-black uppercase tracking-wider">
+              <span>⚖️</span> O que é violência contra a mulher?
+            </div>
+            <a
+              href="tel:190"
+              className="inline-flex items-center gap-1.5 px-3 py-1 bg-red-600 hover:bg-red-700 text-white text-xs font-black rounded-xl shadow-xs transition-all animate-pulse"
+            >
+              <PhoneCall className="w-3.5 h-3.5" />
+              <span>PERIGO IMEDIATO? LIGUE 190</span>
+            </a>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-black text-zinc-950 uppercase tracking-tight">
+            Os 5 Tipos de Violência (Lei Maria da Penha)
+          </h2>
+          <p className="text-sm sm:text-base text-zinc-700 leading-relaxed">
+            A violência contra a mulher é toda ação baseada no gênero que cause morte, dano ou sofrimento físico, sexual ou psicológico. No Brasil, a <strong>Lei Maria da Penha (Lei 11.340/2006, Art. 7º)</strong> divide essa violência em <strong>cinco tipos principais</strong>:
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+          {/* 1. Física */}
+          <div className="p-4 rounded-2xl bg-red-50 border border-red-200 space-y-2 flex flex-col justify-between">
+            <div className="space-y-1.5">
+              <div className="w-8 h-8 rounded-xl bg-red-600 text-white flex items-center justify-center font-black text-xs">
+                1
+              </div>
+              <h3 className="font-black text-sm text-red-950 uppercase">Violência Física</h3>
+              <p className="text-xs text-red-900 leading-relaxed font-medium">
+                Bater, empurrar, chutar, apertar ou usar qualquer força que machuque o corpo.
+              </p>
+            </div>
+            <span className="text-[10px] font-bold text-red-800 bg-red-100 px-2 py-0.5 rounded-md w-fit">
+              Art. 7º, I
+            </span>
+          </div>
+
+          {/* 2. Psicológica */}
+          <div className="p-4 rounded-2xl bg-purple-50 border border-purple-200 space-y-2 flex flex-col justify-between">
+            <div className="space-y-1.5">
+              <div className="w-8 h-8 rounded-xl bg-[#9C27B0] text-white flex items-center justify-center font-black text-xs">
+                2
+              </div>
+              <h3 className="font-black text-sm text-purple-950 uppercase">Violência Psicológica</h3>
+              <p className="text-xs text-purple-900 leading-relaxed font-medium">
+                Ameaçar, humilhar, xingar, controlar roupas ou isolar de amigos e família.
+              </p>
+            </div>
+            <span className="text-[10px] font-bold text-purple-800 bg-purple-100 px-2 py-0.5 rounded-md w-fit">
+              Art. 7º, II
+            </span>
+          </div>
+
+          {/* 3. Sexual */}
+          <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 space-y-2 flex flex-col justify-between">
+            <div className="space-y-1.5">
+              <div className="w-8 h-8 rounded-xl bg-rose-600 text-white flex items-center justify-center font-black text-xs">
+                3
+              </div>
+              <h3 className="font-black text-sm text-rose-950 uppercase">Violência Sexual</h3>
+              <p className="text-xs text-rose-900 leading-relaxed font-medium">
+                Forçar atos sexuais, impedir o uso de métodos contraceptivos ou obrigar ao aborto.
+              </p>
+            </div>
+            <span className="text-[10px] font-bold text-rose-800 bg-rose-100 px-2 py-0.5 rounded-md w-fit">
+              Art. 7º, III
+            </span>
+          </div>
+
+          {/* 4. Patrimonial */}
+          <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 space-y-2 flex flex-col justify-between">
+            <div className="space-y-1.5">
+              <div className="w-8 h-8 rounded-xl bg-amber-600 text-white flex items-center justify-center font-black text-xs">
+                4
+              </div>
+              <h3 className="font-black text-sm text-amber-950 uppercase">Violência Patrimonial</h3>
+              <p className="text-xs text-amber-900 leading-relaxed font-medium">
+                Quebrar objetos pessoais, reter dinheiro ou controlar salários e documentos.
+              </p>
+            </div>
+            <span className="text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-md w-fit">
+              Art. 7º, IV
+            </span>
+          </div>
+
+          {/* 5. Moral */}
+          <div className="p-4 rounded-2xl bg-blue-50 border border-blue-200 space-y-2 flex flex-col justify-between">
+            <div className="space-y-1.5">
+              <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-xs">
+                5
+              </div>
+              <h3 className="font-black text-sm text-blue-950 uppercase">Violência Moral</h3>
+              <p className="text-xs text-blue-900 leading-relaxed font-medium">
+                Fazer calúnias, difamações ou xingamentos que atinjam a honra e a reputação.
+              </p>
+            </div>
+            <span className="text-[10px] font-bold text-blue-800 bg-blue-100 px-2 py-0.5 rounded-md w-fit">
+              Art. 7º, V
+            </span>
+          </div>
+        </div>
+
+        {/* ESTATÍSTICAS NACIONAIS 2025 */}
+        <div className="bg-zinc-950 text-white p-4 sm:p-5 rounded-2xl border border-purple-500/30 space-y-3">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-800 pb-2">
+            <span className="text-xs font-black text-purple-300 uppercase tracking-wider">
+              📊 Dados Oficiais: Anuário Brasileiro de Segurança Pública 2025
+            </span>
+            <span className="text-[10px] text-zinc-400">Panorama Nacional</span>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center sm:text-left">
+            <div className="p-2.5 bg-zinc-900 rounded-xl border border-zinc-800">
+              <div className="text-xl font-black text-red-400">1.492</div>
+              <div className="text-[10px] text-zinc-400 font-bold uppercase">Feminicídios</div>
+            </div>
+            <div className="p-2.5 bg-zinc-900 rounded-xl border border-zinc-800">
+              <div className="text-xl font-black text-amber-400">3.870</div>
+              <div className="text-[10px] text-zinc-400 font-bold uppercase">Tentativas</div>
+            </div>
+            <div className="p-2.5 bg-zinc-900 rounded-xl border border-zinc-800">
+              <div className="text-xl font-black text-purple-300">51.866</div>
+              <div className="text-[10px] text-zinc-400 font-bold uppercase">Violência Psicológica</div>
+            </div>
+            <div className="p-2.5 bg-zinc-900 rounded-xl border border-zinc-800">
+              <div className="text-xl font-black text-emerald-400">1.067.556</div>
+              <div className="text-[10px] text-zinc-400 font-bold uppercase">Chamadas 190 (2/min)</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 bg-purple-50/70 p-4 rounded-2xl border border-purple-200">
+          <span className="text-xs text-purple-950 font-bold">
+            💡 Precisa de orientações sobre como registrar denúncia ou sobre redes de apoio locais?
+          </span>
+          <Link
+            to="/mitos-verdades"
+            className="px-4 py-2 bg-[#9C27B0] hover:bg-[#8E24AA] text-white font-black text-xs rounded-xl shadow-xs transition-all flex items-center gap-1.5 shrink-0"
+          >
+            <span>VER GUIA DE DENÚNCIA & 5 TIPOS</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+      </section>
+
+      {/* PAINEL DE BOTÕES DE COMANDO EM 1 TOQUE (LEI MARIA DA PENHA & EMERGÊNCIA) */}
+      <BotoesComandoViolencia />
 
       {/* 4 BOTÕES DE NAVEGAÇÃO PRINCIPAIS: ROXO CLARO / DESTACADOS */}
       <section className="space-y-4">
@@ -278,6 +430,9 @@ Essas palavras carregam um grito contra a violência, contra o controle, contra 
           </p>
         </blockquote>
       </section>
+
+      {/* ESPAÇO PARA RELATOS E AVALIAÇÕES */}
+      <RelatosAvaliacoes />
 
       {/* CARTAZ OFICIAL DA CAMPANHA */}
       <section className="bg-white rounded-3xl p-6 sm:p-8 border border-purple-200 shadow-md">
